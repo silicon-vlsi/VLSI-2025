@@ -1,5 +1,0 @@
-#!/bin/sh
-
-iverilog -o out.vvp TB-tsense-SPI.v tsense-SPI.v
-vvp out.vvp
-#gtkwave dump.vcd

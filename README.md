@@ -1,15 +1,14 @@
-# VLSI-2024
-Portal for 2024 SIT batch being mentored at the Advnaced VLSI Lab.
+# VLSI-2025
+Portal for 2025 Slicon University batch being mentored at the Advanced VLSI Lab.
 
 # TABLE OF CONTENT
 
 - [Resources](#RESOURCES)
   - [Reference](#References)
+  - [Useful Links](#useful-Links)
 - [Tasks & Assignments](#TASKS-and-ASSIGNMENTS)
 - [Projects](#projects)
   - [SPI-based TEMPERATURE MONITOR](#SPI-based-TEMPERATURE-MONITOR)
-  - [Temperature and Humidity Monitor](#TEMPERATURE-and-HUMIDITY-MONITOR)
-  - [A Simple 8-bit MIPS Microprocessor](#A-SIMPLE-8-bit-MIPS-MICROPROCESSOR)
 - [Electronic Design Automation (EDA) Software](#ELECTRONIC-DESIGN-AUTOMATION-SOFTWARE)
   - [Installing Icarus Verilog with GTKWave](#INSTALLING-ICARUS-VERILOG-with-GTKWAVE)
 
@@ -26,54 +25,29 @@ Portal for 2024 SIT batch being mentored at the Advnaced VLSI Lab.
 - [**Mishra**] Mishra, Kishore. **Advanced Chip Design**: Practical Examples in Verilog, 2013. [`DBURL/s/qb3rm97rqvri6my/MishraKishore-AdvancedChipDesign-Verilog.pdf`]. -- Lots of Verilog examples.
 
 
+## Useful Links
+
+- [An easy-to-read SPI tutorial from sparkfun](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi)
+- [Datasheet: TI SPI-based temperature sensor LM70][datasheetLM70]
+- [Technical Reference: Xilinx Spartan-6 FPGA Development Board][TechRefSpartan6]
+
+
 # TASKS and ASSIGNMENTS
 
-- [23 Dec 2022]: 
-  - Research and understand the I2C protocol. You can start with some of the links provided below.
-  - Create a Verilog model for the [DHT20](https://www.dropbox.com/s/h3shzfsain3r9li/datasheet-temp-humidity-5193-DHT20.pdf) temp & humidity sensor.
-  - Continue with the Verilog lessons from chipverify.com
-- [21 Sep 2022]: Follow the first 8 lessons in this [GitHub page](https://github.com/silicon-vlsi-org/module-cs3-301) to get familiar with and improve your skill in using Unix/Linux commands. You can use any Linux machine (webinal or your Virtual Box) to complete the assignement.  
+- [`10 Apr 2024`]: 
+  - :one: Install [**WSL2**](https://github.com/silicon-vlsi-org/eda-wsl2) and install `iverilog` and `gtkwave` (See instructions [here](#INSTALLING-ICARUS-VERILOG-with-GTKWAVE))
+  - :two: Follow the **first 8 lessons** in this [GitHub page](https://github.com/silicon-vlsi-org/module-cs3-301) to get familiar with and improve your skill in using Unix/Linux commands. 
+  - :three: Go through the [LM70 datasheet][datasheetLM70] and understand these key specs of the sensor:
+    - How to read a byte of the data using the SPI protocol.
+    - Get a familiar with the SPI protocol. ([An easy-to-read SPI tutorial from sparkfun](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi))
+    - What is the accuracy of the temperature for the MSB byte.
+  - :four: Come up with a basic architecture to read the 8-bit data and display it on two 7-segment displays.
 
 # PROJECTS
 
 ## SPI-based TEMPERATURE MONITOR
 
 This project will aim at design and immplemention of a SPI-based temperature monitor. The students will design a controller in Verilog to read the data from the sensor ([LM70][datasheetLM70]) using the industry-standard SPI protocol, convert the data to a human readable format (deg-C) and drive a set of 7-segment display to display the data. In order to test the Verilog code in realtime application, the Verilog code will be synthesized into a Xilinx's Spartan FPGA board. This will allow the students to test their Verilog code in real time.
-
-![Temperature Monitor Block Diagram](docs/tempMonitor-blockDiag-v1-0322.png)
-
-**SOME USEFUL LINKS**
-
-- [An easy-to-read SPI tutorial from sparkfun](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi)
-- [Datasheet: TI SPI-based temperature sensor LM70][datasheetLM70]
-- [Technical Reference: Xilinx Spartan-6 FPGA Development Board][TechRefSpartan6]
-
-:exclamation: **TASKS:** :exclamation:
-- :one: Convert the shift register code to a compact format like this `shift_reg <= shifte_reg<<1;` 
-- :two: Latch the 8-bit output from the LM70 to `outreg[7:0]` at the end of read cycle and verify you the value is the same as set in the temperature sensor.
-- :three: Follow [chipverify.com](https://www.chipverify.com/verilog/verilog-tutorial) excercises till the __Behavioural modeling__ section. Now you can use iverilog to complete the assignments.
- 
-
-## I2C-based TEMPERATURE and HUMIDITY MONITOR
-
-This project will aim at design and immplemention of a temperature & humidity monitor. The students will design a controller in Verilog to read the data from the sensor ([DHT20](https://www.dropbox.com/s/h3shzfsain3r9li/datasheet-temp-humidity-5193-DHT20.pdf)), convert the data to a human readable format (deg-C and Rh-%) and drive a set of 7-segment display to display the data. In order to test the Verilog code in realtime application, the Verilog code will be synthesized into a Digilent [Arty A7 FPGA development board](https://digilentinc.com/start/ArtyA7). This will allow the students to test their Verilog code in real time.
-
-**SOME USEFUL LINKS**
-
-- [An easy-to-read I2C tutorial from sparkfun](https://learn.sparkfun.com/tutorials/i2c/)
-- [An detail IC implementation of a I2C controller](https://github.com/vsao/I2C)
-- [Datasheet: DHT20 Temperature & Humidity Sensor](https://www.dropbox.com/s/h3shzfsain3r9li/datasheet-temp-humidity-5193-DHT20.pdf)
-- [Arty A7 FGPA Development Board Resources](https://digilentinc.com/start/ArtyA7)
-
-## A SIMPLE 8-bit MIPS MICROPROCESSOR
-
-For this project we will design and immplement a 8-bit subset of the MIPS microprocessor architecture as outlined in [**Weste**] Chapter 1.7 as an example case study. The major development steps for this project will be:
-- Study chapter 1.7, understand it **well** and prepare a short presentation summarizing the project. 
-- Create a behavioural model in Verilog of the whole microprocessor and test it with a machine code of a simple program.
-- Create structural models of each sub-system of the processor using Verilog structural flow using a basic set digital gates.
-- Verify each subsystem and the entire processor using the structural models.
-- Design, layout and characterize each of the digital gates used in the processor using SKY130 technology.
-- Back annotate the chracterized delays into the Verilog models and do timing checks and find the highest frequency of operation.
 
 
 # ELECTRONIC DESIGN AUTOMATION SOFTWARE
