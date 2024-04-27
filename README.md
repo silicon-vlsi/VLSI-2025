@@ -34,6 +34,15 @@ Portal for 2025 Slicon University batch being mentored at the Advanced VLSI Lab.
 
 # TASKS and ASSIGNMENTS
 
+- [`27 Apr 2024`]: 
+  - A verilog model of the temperature sensor LM70 as been added: `verilog/tb/lm70.v`
+  - A sample testbench `verilog/tb/tb.v` has been added. It has the LM70 instatiated and connected to clock, CS and reset.
+  - Complete the following tasks:
+    - :one: Update your work area by doing a `git pull`
+      - If haven't already, clone the github repo into your work directory first.
+    - :two: Modify the testbench to read 1-byte of data from LM70 and verify it. 
+      - Hint: you just have to generate `CS` low for 8 clock pulse and monitor the `SIO` pin.
+  
 - [`10 Apr 2024`]: 
   - :one: Install [**WSL2**](https://github.com/silicon-vlsi-org/eda-wsl2) and install `iverilog` and `gtkwave` (See instructions [here](#INSTALLING-ICARUS-VERILOG-with-GTKWAVE))
   - :two: Follow the **first 8 lessons** in this [GitHub page](https://github.com/silicon-vlsi-org/module-cs3-301) to get familiar with and improve your skill in using Unix/Linux commands. 
