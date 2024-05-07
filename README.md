@@ -34,6 +34,16 @@ Portal for 2025 Slicon University batch being mentored at the Advanced VLSI Lab.
 
 # TASKS and ASSIGNMENTS
 
+- [`07 May 2024`]:
+  - An empty module `verlilog/rtl/celcius.v` has been added to this repo.
+  - This module represents your project **Celcius**, named after Swedish Astronomer **Anders Celcius** who invented the celsius or the centigrade scale.
+  - You can now add your verilog code for the project in this module. Do NOT change the ports of this module.
+  - This module has been added in the testbench `tb.v` and appropriately connected.
+  - You will get the new code by doing a `git pull` in your _git-cloned_ directory. Make a copy of it in your working directory and do your _work_ in that directory.
+  - Please complet the following tasks:
+    - Write a verilog code in the `celcius` module to **divide** the input clock of 100MHz to 100kHz. This will be the frequency for the SPI clock `SCK`.
+    - Read up about Anders Celcius and other renowned scientist responsible for temperature measurement.
+ 
 - [`27 Apr 2024`]: 
   - A verilog model of the temperature sensor LM70 as been added: `verilog/tb/lm70.v`
   - A sample testbench `verilog/tb/tb.v` has been added. It has the LM70 instatiated and connected to clock, CS and reset.
