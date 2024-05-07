@@ -38,9 +38,9 @@ Portal for 2025 Slicon University batch being mentored at the Advanced VLSI Lab.
   - An empty module `verlilog/rtl/celcius.v` has been added to this repo.
   - This module represents your project **Celcius**, named after Swedish Astronomer **Anders Celcius** who invented the celsius or the centigrade scale.
   - You can now add your verilog code for the project in this module. Do NOT change the ports of this module.
-  - This module has been added in the testbench `tb.v` and appropriately connected.
+  - This module has been _instantiated_ in the testbench `tb.v` and appropriately connected.
   - You will get the new code by doing a `git pull` in your _git-cloned_ directory. Make a copy of it in your working directory and do your _work_ in that directory.
-  - Please complet the following tasks:
+  - Please complete the following tasks:
     - :one: Write a verilog code in the `celcius` module to **divide** the input clock of 100MHz to 100kHz. This will be the frequency for the SPI clock `SCK`.
     - :two: Read up about Anders Celcius and other renowned scientist responsible for temperature measurement.
  
