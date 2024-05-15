@@ -34,6 +34,16 @@ Portal for 2025 Slicon University batch being mentored at the Advanced VLSI Lab.
 
 # TASKS and ASSIGNMENTS
 
+- [`15 May 2024`]: **LIVE DEVELOPMENT SESSION**
+ 
+![Timing Diagram for Clock Divider Design](docs/timing-clkdiv.png)
+
+  - In this live session we will calculate the necessary division ratio bewteen the FPGA input clock of **100MHz** and the output `SCK` and immplement the divider. 
+  - :one: From the LM70 datasheet find out the _minimum_ and _maximum_ `SCK` frequency that can be provided to the LM70.
+  - :two: Typical refresh frequency for a 7-segment display is between **60Hz to 1 kHz**. We will sample the LM70 every **12** `SCK` clock cycles as shown in the timing diagram above. Based on these two assumptions, calculate the `SCK` frequency and hence the divide ratio.
+  - :three: Implement the divider to generate the above `SCK` clock frequency.
+  - :four: Implement the `CS` and `SCK` logic.
+
 - [`07 May 2024`]:
   - An empty module `verlilog/rtl/celcius.v` has been added to this repo.
   - This module represents your project **Celcius**, named after Swedish Astronomer **Anders Celcius** who invented the celsius or the centigrade scale.
